@@ -1,2 +1,0 @@
-# interview-handbook
-Interview Handbook
