@@ -4,7 +4,7 @@ heroImage:
 heroText: Interview Handbook
 tagline: 前端面试手册💯
 actionText: 开始吧 →
-actionLink: /js/first
+actionLink: /js/1
 features:
   - title: 丰富功能
     details: 提炼了典型的业务场景，提供了丰富的功能组件

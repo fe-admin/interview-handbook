@@ -13,58 +13,57 @@ module.exports = {
           collapsable: false,
           children: [
             {
-              title: "flex",
+              title: "语言基础",
               collapsable: false,
-              children: [
-                ["first", "介绍"],
-                ["layout", "布局"],
-              ],
+              children: ["1", "2", "3"],
             },
             {
-              title: "guild",
+              title: "网络基础",
               collapsable: false,
-              children: [
-                ["first", "介绍"],
-                ["layout", "布局"],
-              ],
+              children: ["1", "2", "3"],
+            },
+            {
+              title: "基本问题",
+              collapsable: false,
+              children: ["3000"],
             },
           ],
         },
         {
-          title: "CSS深入",
+          title: "深入",
           collapsable: false,
           children: ["g2"],
         },
       ],
-      "/css/": [
-        {
-          title: "CSS基础",
-          collapsable: false,
-          children: [
-            {
-              title: "flex",
-              collapsable: false,
-              children: [
-                ["first", "介绍"],
-                ["layout", "布局"],
-              ],
-            },
-            {
-              title: "guild",
-              collapsable: false,
-              children: [
-                ["first", "介绍"],
-                ["layout", "布局"],
-              ],
-            },
-          ],
-        },
-        {
-          title: "CSS深入",
-          collapsable: false,
-          children: ["g2"],
-        },
-      ],
+      // "/css/": [
+      //   {
+      //     title: "CSS基础",
+      //     collapsable: false,
+      //     children: [
+      //       {
+      //         title: "flex",
+      //         collapsable: false,
+      //         children: [
+      //           ["first", "介绍"],
+      //           ["layout", "布局"],
+      //         ],
+      //       },
+      //       {
+      //         title: "guild",
+      //         collapsable: false,
+      //         children: [
+      //           ["first", "介绍"],
+      //           ["layout", "布局"],
+      //         ],
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: "CSS深入",
+      //     collapsable: false,
+      //     children: ["g2"],
+      //   },
+      // ],
       "/donate/": [
         {
           title: "配置",
@@ -72,8 +71,8 @@ module.exports = {
       ],
     },
     nav: [
-      { text: "JS面试", link: "/js/first" },
-      { text: "CSS面试", link: "/css/first" },
+      { text: "JS面试", link: "/js/1" },
+      // { text: "CSS面试", link: "/css/first" },
       { text: "捐赠", link: "/donate/" },
       {
         text: "GitHub",
@@ -84,5 +83,5 @@ module.exports = {
   configureWebpack: (config) => {
     // config.output.publicPath = "/docs/";
   },
-  plugins: ["@vuepress/nprogress"],
+  plugins: ["@vuepress/nprogress", ["demo-code"]],
 };
