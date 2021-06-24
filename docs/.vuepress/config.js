@@ -1,87 +1,93 @@
-const path = require("path");
+const jsMap = [
+  {
+    语言基础: [0, 3], //[1-999]
+    网络基础: [1000, 3], //[1000-1999]
+    数据结构与算法: [2000, 1], //[2000-2999]
+  },
+];
+const js = [
+  {
+    title: "基础知识",
+    collapsable: false,
+    children: [
+      {
+        title: "语言基础", //[1-999]
+        collapsable: false,
+        children: children(0, 3),
+      },
+      {
+        title: "网络基础", //[1000-1999]
+        collapsable: false,
+        children: children(1000, 3),
+      },
+      {
+        title: "数据结构与算法",
+        collapsable: false, //[2000-2999]
+        children: children(2000, 1),
+      },
+    ],
+  },
+  {
+    title: "面试题目",
+    collapsable: false,
+    children: [
+      {
+        title: "基础", //[3000-3999]
+        collapsable: false,
+        children: children(3000, 4),
+      },
+      {
+        title: "进阶", //[4000-4999]
+        collapsable: false,
+        children: children(4000, 1),
+      },
+    ],
+  },
+];
+const hc = [
+  {
+    title: "CSS基础",
+    collapsable: false,
+    children: [
+      {
+        title: "flex",
+        collapsable: false,
+        children: children(0, 1),
+      },
+      {
+        title: "guild",
+        collapsable: false,
+        children: children(1000, 2),
+      },
+    ],
+  },
+  {
+    title: "CSS深入",
+    collapsable: false,
+    children: children(1000, 2),
+  },
+];
+const config = require("./config/index.js");
 module.exports = {
-  base: "/interview/",
-  head: [["link", { rel: "icon", href: "/logo.png" }]],
-  title: "fe-admin", // Title for the site. This will be displayed in the navbar.
+  ...config.default,
   themeConfig: {
-    smoothScroll: true,
-    logo: "/nav.png",
+    ...config.theme,
     sidebar: {
-      "/js/": [
-        {
-          title: "基础",
-          collapsable: false,
-          children: [
-            {
-              title: "语言基础",
-              collapsable: false,
-              children: ["1", "2", "3"],
-            },
-            {
-              title: "网络基础",
-              collapsable: false,
-              children: ["1", "2", "3"],
-            },
-            {
-              title: "基本问题",
-              collapsable: false,
-              children: ["3000"],
-            },
-          ],
-        },
-        {
-          title: "深入",
-          collapsable: false,
-          children: ["g2"],
-        },
-      ],
-      // "/css/": [
-      //   {
-      //     title: "CSS基础",
-      //     collapsable: false,
-      //     children: [
-      //       {
-      //         title: "flex",
-      //         collapsable: false,
-      //         children: [
-      //           ["first", "介绍"],
-      //           ["layout", "布局"],
-      //         ],
-      //       },
-      //       {
-      //         title: "guild",
-      //         collapsable: false,
-      //         children: [
-      //           ["first", "介绍"],
-      //           ["layout", "布局"],
-      //         ],
-      //       },
-      //     ],
-      //   },
-      //   {
-      //     title: "CSS深入",
-      //     collapsable: false,
-      //     children: ["g2"],
-      //   },
-      // ],
+      "/js/": js,
+      "/hc/": hc,
       "/donate/": [
         {
           title: "配置",
         },
       ],
     },
-    nav: [
-      { text: "JS面试", link: "/js/1" },
-      // { text: "CSS面试", link: "/css/first" },
-      { text: "捐赠", link: "/donate/" },
-      {
-        text: "GitHub",
-        link: "https://github.com/fe-admin/interview-handbook",
-      },
-    ],
   },
-  configureWebpack: (config) => {
-    // config.output.publicPath = "/docs/";
-  },
-  plugins: ["@vuepress/nprogress", ["demo-code"]],
 };
+
+function children(prefix, num) {
+  const map = [];
+  for (let i = 1; i < num + 1; i++) {
+    map.push(`${prefix ? prefix + i : i}`);
+  }
+  return map;
+}
