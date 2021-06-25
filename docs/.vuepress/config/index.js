@@ -1,5 +1,12 @@
+function children(prefix, num) {
+  const map = [];
+  for (let i = 1; i < num + 1; i++) {
+    map.push(`${prefix ? prefix + i : i}`);
+  }
+  return map;
+}
 module.exports = {
-  default: {
+  defaults: {
     base: "/interview/",
     head: [["link", { rel: "icon", href: "/logo.png" }]],
     title: "fe-admin",
@@ -20,5 +27,17 @@ module.exports = {
         link: "https://github.com/fe-admin/interview-handbook",
       },
     ],
+  },
+
+  render(list) {
+    const result = [];
+    list.forEach(([title, arr]) => {
+      result.push({
+        title,
+        collapsable: false,
+        children: children(...arr),
+      });
+    });
+    return result;
   },
 };
