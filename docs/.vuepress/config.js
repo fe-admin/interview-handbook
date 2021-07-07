@@ -35,6 +35,22 @@ const hc = [
     ]),
   },
 ];
+const vue = [
+  {
+    title: "基础",
+    collapsable: false,
+    children: render([
+      ["基础", [0, 2]], //[1-999]
+    ]),
+  },
+  {
+    title: "面试题目",
+    collapsable: false,
+    children: render([
+      ["基础", [1000, 1]], //[1-999]
+    ]),
+  },
+];
 module.exports = {
   ...defaults,
   themeConfig: {
@@ -42,6 +58,7 @@ module.exports = {
     sidebar: {
       "/js/": js,
       "/hc/": hc,
+      "/vue/": vue,
       "/donate/": [
         {
           title: "配置",

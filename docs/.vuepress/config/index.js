@@ -19,8 +19,9 @@ module.exports = {
     smoothScroll: true,
     logo: "/nav.png",
     nav: [
-      { text: "JS", link: "/js/1" },
       { text: "HTML/CSS", link: "/hc/1" },
+      { text: "JS", link: "/js/1" },
+      { text: "Vue", link: "/vue/1" },
       { text: "捐赠", link: "/donate/" },
       {
         text: "GitHub",
