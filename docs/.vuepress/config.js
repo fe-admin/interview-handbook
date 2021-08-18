@@ -14,7 +14,7 @@ const js = [
     title: "面试题目",
     collapsable: false,
     children: render([
-      ["基础", [3000, 7]], ////[3000-3999]
+      ["基础", [3000, 11]], ////[3000-3999]
       ["进阶", [4000, 1]], ////[4000-4999]
     ]),
   },
@@ -24,14 +24,14 @@ const hc = [
     title: "CSS基础",
     collapsable: false,
     children: render([
-      ["基础", [0, 3]], //[1-999]
+      ["基础", [0, 4]], //[1-999]
     ]),
   },
   {
     title: "面试题目",
     collapsable: false,
     children: render([
-      ["基础", [1000, 1]], //[1-999]
+      ["基础", [1000, 2]], //[1-999]
     ]),
   },
 ];
