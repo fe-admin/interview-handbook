@@ -47,7 +47,7 @@ const vue = [
     title: "面试题目",
     collapsable: false,
     children: render([
-      ["基础", [1000, 1]], //[1-999]
+      ["基础", [1000, 2]], //[1-999]
     ]),
   },
 ];
